@@ -9,14 +9,17 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 @interface DangerSaverView : ScreenSaverView {
-    NSImageView *imageView;
     NSMutableArray *webPagePreviews;
+    NSMutableArray *imageViews;
+    NSSize tileSize;
 }
 
-@property (nonatomic, retain) NSImageView *imageView;
+@property (nonatomic, retain) NSMutableArray *imageViews;
 @property (nonatomic, retain) NSMutableArray *webPagePreviews;
+@property (nonatomic) NSSize tileSize;
 
 
 - (NSImage *)getRandomImage;
+- (void)crawlCaches:(NSObject *)obj;
 
 @end
